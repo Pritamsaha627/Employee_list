@@ -285,11 +285,11 @@ def updatedata(man,n):
             def update1(man,s1):
                 db=sqlite3.connect("employee_list.db")
                 cr = db.cursor()
-                #try:
-                cr.execute("update ins set name ='"+s2.get()+"',mobile ='"+s3.get()+"',email ='"+s4.get()+"',salary ='"+s5.get()+"',edit_by ='"+man+"' where emp_id = '"+s1.get()+"'")
-                messagebox.showinfo('Title','Data updated Successfully!!')
-                '''except:
-                    messagebox.showinfo('Title','Error')'''
+                try:
+                    cr.execute("update ins set name ='"+s2.get()+"',mobile ='"+s3.get()+"',email ='"+s4.get()+"',salary ='"+s5.get()+"',edit_by ='"+man+"' where emp_id = '"+s1.get()+"'")
+                    messagebox.showinfo('Title','Data updated Successfully!!')
+                except:
+                    messagebox.showinfo('Title','Error')
                 db.commit()
                 db.close()
                 showalldata1(f55)
